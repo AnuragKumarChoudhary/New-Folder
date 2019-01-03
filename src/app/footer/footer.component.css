@@ -1,0 +1,10 @@
+.container{
+    background:#4267b2;
+ width:100%;
+    color:#fff;
+}
+a {
+    color:#fff;
+    text-decoration: none;
+    cursor: pointer;
+}

@@ -1,0 +1,78 @@
+<div class="container">
+  <div class="header">
+    <h4 align="center">Cosnumer Registration</h4>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+  <mat-vertical-stepper [linear]="isLinear" #stepper>
+    <mat-step [stepControl]="firstFormGroup">
+      <ng-template matStepLabel>Click Photo</ng-template>
+      <div class="row">
+        <div class="col-sm-4">
+          <video #video id="video" class="center-block" width="150" height="150" autoplay (click)="capture()"></video>
+        </div>
+        <div class="col-sm-4">
+          <br>
+          <canvas #canvas id="canvas" width="150" height="150"></canvas>
+        </div>
+        <div class="col-sm-4">
+          <br>
+          <br>
+          <br>
+          <button mat-button class="btn btn-primary" align="center" matStepperNext>Next</button>
+        </div>
+      </div>
+    </mat-step>
+    <mat-step [stepControl]="secondFormGroup">
+      <ng-template matStepLabel>Customer Details</ng-template>
+      <div class="row">
+        <div class="col-sm-6">
+          Name:
+          <input type="text" class="form-control" placeholder="Name" [(ngModel)]="userDetails.name">
+        </div>
+        <div class="col-sm-6">
+          Email:
+          <input type="email" class="form-control" placeholder="Email" [(ngModel)]="userDetails.email">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          Phone:
+          <input type="text" class="form-control" placeholder="Contact Number" [(ngModel)]="phone">
+        </div>
+        <div class="col-sm-6">
+          Date of Birth:
+          <input type="date" class="form-control" placeholder="Date" [(ngModel)]="userDetails.date_of_birth">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          Gender:
+          <select class="form-control" [(ngModel)]="userDetails.gender">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+        <div class="col-sm-6">
+          Wedding Date:
+          <input type="date" class="form-control" placeholder="Wedding Date" [(ngModel)]="userDetails.wedding_date">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-6">
+          Child Birth Date:
+          <input type="date" class="form-control" placeholder="Child Birth Date" [(ngModel)]="userDetails.child_birth_date">
+        </div>
+        <div class="col-sm-6">
+          <br>
+          <button class="btn btn-primary form-control" (click)="register();">Register</button>
+        </div>
+      </div>
+    </mat-step>
+  </mat-vertical-stepper>
+  <br>
+  <mat-divider></mat-divider>
+</div>

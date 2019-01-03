@@ -1,0 +1,38 @@
+.container{
+    width:100%;
+}
+
+.services{
+    color:#4267b2;
+    cursor: pointer;
+    border:1px solid #4267b2;
+}
+.iconLogo{
+    font-size:40px;
+}
+
+.iconLogo:hover {
+    transform: scale(1.2);
+    filter: brightness(120%);
+}
+
+.titleService{
+    font-size: 30px;
+    color:rgb(51,122,183);
+    font-weight: 700;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    text-align: center;
+    padding-bottom: .8em;
+    position: relative;
+    font-family: 'Open Sans', sans-serif;
+}
+.avatar{
+    width:150px;
+    height:150px;
+}
+
+.avatar:hover{
+    transform: scale(1.2);
+    filter: brightness(120%);
+}

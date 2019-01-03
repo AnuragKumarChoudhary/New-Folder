@@ -1,0 +1,8 @@
+:host /deep/ .mat-cart-header-mg-bg {
+    background-color: #337ab7;
+    padding: 10px;
+}
+
+:host /deep/ .color-text-white{
+    color:#fff;
+}

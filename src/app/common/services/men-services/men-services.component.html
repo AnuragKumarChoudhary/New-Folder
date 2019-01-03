@@ -1,0 +1,92 @@
+<div class="container">
+  <h3 align="center">Men Services</h3>
+  <mat-divider></mat-divider>
+  <br>
+  <div *ngIf="showSelectItems">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Service</th>
+          <th>Charges (Rs)</th>
+          <th>Duration</th>
+          <th>Discount</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let services of menServices">
+        <tr>
+          <th>
+            <input type="checkbox" (change)="checkBox(services);">
+          </th>
+          <th>{{services.service_name}}</th>
+          <th>
+            {{services.charges}}
+          </th>
+          <th>
+            {{services.duration}}
+          </th>
+          <th>
+            {{services.discount}}</th>
+        </tr>
+      </tbody>
+    </table>
+
+    <br>
+    <mat-divider></mat-divider>
+    <br>
+    <div>
+      <button class="btn btn-primary form-control" (click)="Next();">Next</button>
+    </div>
+  </div>
+
+  <div *ngIf="searchCustomerDiv">
+    <div class="row">
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Mobile Number" [(ngModel)]="contact">
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-primary form-control" (click)="searchCustomer();">Search Customer</button>
+      </div>
+      <div class="col-md-2">
+        <button class="btn btn-primary form-control" (click)="back();">Back</button>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <div *ngIf="showDetails">
+    <mat-divider></mat-divider>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let customer of customerData">
+        <tr>
+          <th>
+            <input type="checkbox" (change)="customerDetails(customer);">
+          </th>
+          <th>{{customer.name}}</th>
+          <th>{{customer.email}}</th>
+          <th>{{customer.contact}}</th>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <mat-divider></mat-divider>
+    <div>
+      <button class="btn btn-primary form-control" (click)="bookApointment();">Book Appointment</button>
+    </div>
+  </div>
+
+  <div *ngIf="showReg">
+    <button class="btn btn-primary center-block" (click)="registerCustomer()">Register Customer</button>
+  </div>
+</div>

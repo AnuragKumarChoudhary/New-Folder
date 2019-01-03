@@ -1,0 +1,105 @@
+<h3>Women Services</h3>
+<mat-divider></mat-divider>
+<div *ngIf="showSelectItems">
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+      Service Name
+    </div>
+    <div class="col-md-2">
+      Charges (Rs)
+    </div>
+    <div class="col-md-2">
+      Duration (min)
+    </div>
+    <div class="col-md-2">
+      Discount
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <br>
+
+  <div class="row" *ngFor="let services of womenServices">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+      <input type="checkbox" (change)="checkBox(services);">
+    </div>
+    <div class="col-md-2">
+      {{services.service_name}}
+    </div>
+    <div class="col-md-2">
+      {{services.charges}}
+    </div>
+    <div class="col-md-2">
+      {{services.duration}}
+    </div>
+    <div class="col-md-2">
+      {{services.discount}}
+    </div>
+  </div>
+  <br>
+  <div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-2">
+      <button class="btn btn-primary form-control" (click)="Next();">Next</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="searchCustomerDiv">
+  <br>
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-3">
+      <input type="text" class="form-control" placeholder="Mobile Number" [(ngModel)]="contact">
+    </div>
+    <div class="col-md-3">
+      <button class="btn btn-primary form-control" (click)="searchCustomer();">Search Customer</button>
+    </div>
+    <div class="col-md-3">
+        <button class="btn btn-primary form-control" (click)="back();">Back</button>
+    </div>
+  </div>
+  <br>
+  <br>
+  <div *ngIf="showDetails">
+    <div class="row">
+      <div class="col-md-2"></div>
+      <div class="col-md-2">Name</div>
+      <div class="col-md-4">Email</div>
+      <div class="col-md-4">Contact Number</div>
+    </div>
+    <div class="row" *ngFor="let customer of customerData">
+      <div class="col-md-2">
+        <input type="checkbox" (change)="customer(customer);">
+      </div>
+      <div class="col-md-2">{{customer.name}}</div>
+      <div class="col-md-4">{{customer.email}}</div>
+      <div class="col-md-4">{{customer.contact}}</div>
+    </div>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-2">
+      </div>
+      <div class="col-md-2"></div>
+      <div class="col-md-4"></div>
+      <div class="col-md-4">
+        <button class="btn btn-primary form-control" (click)="bookAppointment();">Book Appointment</button>
+      </div>
+    </div>
+  </div>
+</div>
